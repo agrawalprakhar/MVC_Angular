@@ -1,0 +1,14 @@
+
+<!-- app.component.html -->
+<div *ngIf="isAuthenticated(); else login">
+  <!-- Content for authenticated users -->
+  <h1>Common App!</h1>
+  <button (click)="logout()">Logout</button>
+  <!-- Add your app content here -->
+</div>
+
+<ng-template #login>
+  <!-- Content for non-authenticated users -->
+  <app-login></app-login>
+</ng-template>
+<router-outlet></router-outlet>
